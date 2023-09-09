@@ -43,7 +43,7 @@ namespace DoubleDoubleRootFinding {
         }
 
         public static (ddouble x1, ddouble y1, ddouble x2, ddouble y2, bool success) Iteration(Func<ddouble, ddouble> f, ddouble x1, ddouble y1, ddouble x2, ddouble y2) {
-            if (y1.Sign == y2.Sign) {
+            if (ddouble.Sign(y1) == ddouble.Sign(y2)) {
                 return (x1, y1, x2, y2, success: false);
             }
 
@@ -54,7 +54,7 @@ namespace DoubleDoubleRootFinding {
                 return (xc, yc, xc, yc, success: false);
             }
 
-            if (y1.Sign == yc.Sign) {
+            if (ddouble.Sign(y1) == ddouble.Sign(yc)) {
                 return (xc, yc, x2, y2, success: true);
             }
             else {

@@ -32,9 +32,9 @@ namespace DoubleDoubleRootFinding {
 
                 if (dx_prev is not null) {
                     if (divergence_decay && ddouble.Abs(dx) > ddouble.Abs(dx_prev.Value)) {
-                        dx = dx.Sign * ddouble.Abs(dx_prev.Value) / 2;
+                        dx = ddouble.Sign(dx) * ddouble.Abs(dx_prev.Value) / 2;
                     }
-                    if (overshoot_decay && dx.Sign != dx_prev.Value.Sign) {
+                    if (overshoot_decay && ddouble.Sign(dx) != ddouble.Sign(dx_prev.Value)) {
                         dx = ddouble.Ldexp(dx, -1);
                     }
                 }

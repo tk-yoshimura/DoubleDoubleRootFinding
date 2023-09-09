@@ -21,7 +21,7 @@ namespace DoubleDoubleRootFinding {
                 dx = Delta(f, x);
 
                 if (overshoot_decay && dx_prev is not null) {
-                    if (dx.Sign != dx_prev.Value.Sign) {
+                    if (ddouble.Sign(dx) != ddouble.Sign(dx_prev.Value)) {
                         dx = ddouble.Ldexp(dx, -1);
                     }
                 }
@@ -71,7 +71,7 @@ namespace DoubleDoubleRootFinding {
                 dx = Delta(f, x);
 
                 if (overshoot_decay && dx_prev is not null) {
-                    if (dx.Sign != dx_prev.Value.Sign) {
+                    if (ddouble.Sign(dx) != ddouble.Sign(dx_prev.Value)) {
                         dx = ddouble.Ldexp(dx, -1);
                     }
                 }
@@ -79,7 +79,7 @@ namespace DoubleDoubleRootFinding {
                 x += dx;
                 dx_prev = dx;
 
-                if ((x == xrange.min && dx.Sign == -1) || (x == xrange.max && dx.Sign == +1)) {
+                if ((x == xrange.min && ddouble.Sign(dx) == -1) || (x == xrange.max && ddouble.Sign(dx) == +1)) {
                     return ddouble.NaN;
                 }
 

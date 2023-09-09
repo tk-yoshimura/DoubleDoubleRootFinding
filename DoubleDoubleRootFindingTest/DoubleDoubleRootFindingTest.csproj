@@ -14,7 +14,7 @@
     <PackageReference Include="MSTest.TestAdapter" Version="2.2.10" />
     <PackageReference Include="MSTest.TestFramework" Version="2.2.10" />
     <PackageReference Include="coverlet.collector" Version="3.1.2" />
-    <PackageReference Include="TYoshimura.DoubleDouble" Version="2.9.0" />
+    <PackageReference Include="TYoshimura.DoubleDouble" Version="2.9.5" />
   </ItemGroup>
 
   <ItemGroup>

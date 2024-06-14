@@ -80,7 +80,7 @@ namespace DoubleDoubleRootFinding {
                         return x2;
                     }
 
-                    x2 += dx_bisect > 0 ? delta : -delta;
+                    x2 += dx_bisect > 0d ? delta : -delta;
                 }
 
                 y2 = f(x2);

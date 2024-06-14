@@ -28,7 +28,7 @@ namespace DoubleDoubleRootFinding {
                 throw new ArithmeticException($"invalid interval: sgn(f(x1)) == sgn(f(x2))");
             }
 
-            ddouble dx_prev = 0, dx = 0;
+            ddouble dx_prev = 0d, dx = 0d;
 
             while (iters != 0) {
                 if (y1 != 0d && y2 != 0d && (ddouble.Sign(y1) != ddouble.Sign(y2))) {

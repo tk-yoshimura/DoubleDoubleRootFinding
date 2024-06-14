@@ -17,7 +17,16 @@ static (ddouble v, ddouble d) f(ddouble x) {
     return (x * x * x - 2, 3 * x * x);
 }
 
-NewtonRaphsonFinder.RootFind(f, x0: 2);
+ddouble y = NewtonRaphsonFinder.RootFind(f, x0: 2);
+```
+
+```csharp
+// Brent Method
+static ddouble f(ddouble x) {
+    return x * x * x - 2;
+}
+
+ddouble y = BrentFinder.RootFind(f, x1: 1, x2: 2);
 ```
 
 ## Licence

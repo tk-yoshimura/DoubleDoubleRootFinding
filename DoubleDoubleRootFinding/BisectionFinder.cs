@@ -11,9 +11,17 @@ namespace DoubleDoubleRootFinding {
                 throw new ArgumentOutOfRangeException(nameof(eps), $"{nameof(eps)} >= 1e-30");
             }
 
+            if (!ddouble.IsFinite(x1) || !ddouble.IsFinite(x2)) {
+                return ddouble.NaN;
+            }
+
             bool convergenced = false;
 
             ddouble x = ddouble.Ldexp(x1 + x2, -1), y1 = f(x1), y2 = f(x2);
+            
+            if (ddouble.Sign(y1) == ddouble.Sign(y2)) {
+                throw new ArithmeticException($"invalid interval: sgn(f(x1)) == sgn(f(x2))");
+            }
 
             while (iters != 0) {
                 (x1, y1, x2, y2, bool success) = Iteration(f, x1, y1, x2, y2);

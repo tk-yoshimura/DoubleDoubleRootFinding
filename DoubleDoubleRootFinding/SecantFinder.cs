@@ -10,6 +10,11 @@ namespace DoubleDoubleRootFinding {
             if (!(eps >= 1e-30)) {
                 throw new ArgumentOutOfRangeException(nameof(eps), $"{nameof(eps)} >= 1e-30");
             }
+
+            if (!ddouble.IsFinite(x0)) {
+                return ddouble.NaN;
+            }
+
             bool convergenced = false;
 
             ddouble x = x0;

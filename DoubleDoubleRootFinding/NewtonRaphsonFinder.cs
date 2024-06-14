@@ -26,7 +26,7 @@ namespace DoubleDoubleRootFinding {
 
                 if (overshoot_decay && dx_prev is not null) {
                     if (ddouble.Sign(dx) != ddouble.Sign(dx_prev.Value)) {
-                        dx = ddouble.Ldexp(dx, -1);
+                        dx = ddouble.Ldexp(dx, -2);
                     }
                 }
 

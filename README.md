@@ -21,7 +21,7 @@ ddouble y = NewtonRaphsonFinder.RootFind(f, x0: 2);
 ```
 
 ```csharp
-// Brent Method
+// Brent Method: solve x for x^3 = 2
 static ddouble f(ddouble x) {
     return x * x * x - 2;
 }

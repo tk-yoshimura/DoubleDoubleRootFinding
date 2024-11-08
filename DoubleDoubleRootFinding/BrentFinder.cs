@@ -85,7 +85,7 @@ namespace DoubleDoubleRootFinding {
 
                 y2 = f(x2);
 
-                iters = Math.Max(-1, iters - 1);
+                iters = int.Max(-1, iters - 1);
             }
 
             return x2;

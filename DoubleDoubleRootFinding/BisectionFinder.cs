@@ -29,7 +29,7 @@ namespace DoubleDoubleRootFinding {
                 x = ddouble.Ldexp(x1 + x2, -1);
                 ddouble dx = x1 - x2;
 
-                if (ddouble.IsZero(dx) || (Math.Abs((double)dx / (double)x) < eps)) {
+                if (ddouble.IsZero(dx) || (double.Abs((double)dx / (double)x) < eps)) {
                     if (convergenced) {
                         break;
                     }
@@ -44,7 +44,7 @@ namespace DoubleDoubleRootFinding {
                     break;
                 }
 
-                iters = Math.Max(-1, iters - 1);
+                iters = int.Max(-1, iters - 1);
             }
 
             return x;

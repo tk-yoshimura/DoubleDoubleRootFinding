@@ -33,7 +33,7 @@ namespace DoubleDoubleRootFinding {
                 x += dx;
                 dx_prev = dx;
 
-                if (ddouble.IsZero(dx) || (Math.Abs((double)dx / (double)x) < eps)) {
+                if (ddouble.IsZero(dx) || (double.Abs((double)dx / (double)x) < eps)) {
                     if (convergenced) {
                         break;
                     }
@@ -48,7 +48,7 @@ namespace DoubleDoubleRootFinding {
                     break;
                 }
 
-                iters = Math.Max(-1, iters - 1);
+                iters = int.Max(-1, iters - 1);
             }
 
             return x;
@@ -94,7 +94,7 @@ namespace DoubleDoubleRootFinding {
                     x = xrange.max;
                 }
 
-                if (ddouble.IsZero(dx) || (Math.Abs((double)dx / (double)x) < eps)) {
+                if (ddouble.IsZero(dx) || (double.Abs((double)dx / (double)x) < eps)) {
                     if (convergenced) {
                         break;
                     }
@@ -109,7 +109,7 @@ namespace DoubleDoubleRootFinding {
                     break;
                 }
 
-                iters = Math.Max(-1, iters - 1);
+                iters = int.Max(-1, iters - 1);
             }
 
             return x;
